@@ -105,13 +105,300 @@
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
+DROP TABLE IF EXISTS movie;
+DROP TABLE IF EXISTS studio;
+DROP TABLE IF EXISTS actor;
+DROP TABLE IF EXISTS character;
 
 -- Create new tables, according to your domain model
 -- TODO!
+CREATE TABLE movie (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+title TEXT,
+year INTEGER,
+mpaa_rating TEXT,
+studio_id INTEGER
+);
+
+CREATE TABLE studio(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT
+);
+
+CREATE TABLE actor (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT
+);
+
+CREATE TABLE character (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    actor_id INTEGER,
+    movie_id INTEGER
+);
+
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
+
+INSERT INTO studio (
+    name
+)VALUES (
+    "Warner Bros."
+);
+
+INSERT INTO movie (
+    title,
+    year,
+    mpaa_rating,
+    studio_id
+) VALUES (
+    "Batman Begins",
+    "2005",
+    "PG-13",
+    "1"
+);
+
+INSERT INTO movie (
+    title,
+    year,
+    mpaa_rating,
+    studio_id
+) VALUES (
+    "The Dark Knight",
+    "2008",
+    "PG-13",
+    "1"
+);
+
+INSERT INTO movie (
+    title,
+    year,
+    mpaa_rating,
+    studio_id
+) VALUES (
+    "The Dark Knight Rises",
+    "2012",
+    "PG-13",
+    "1"
+);
+
+INSERT INTO actor (
+    name
+) VALUES (
+    "Christian Bale"
+);
+
+INSERT INTO actor (
+    name
+) VALUES (
+    "Michael Caine"
+);
+
+INSERT INTO actor (
+    name
+) VALUES (
+    "Liam Neeson"
+);
+
+INSERT INTO actor (
+    name
+) VALUES (
+    "Katie Holmes"
+);
+
+INSERT INTO actor (
+    name
+) VALUES (
+    "Gary Oldman"
+);
+
+INSERT INTO actor (
+    name
+) VALUES (
+    "Heath Ledger"
+);
+
+INSERT INTO actor (
+    name
+) VALUES (
+    "Aaron Eckhart"
+);
+
+INSERT INTO actor (
+    name
+) VALUES (
+    "Maggie Gyllenhaal"
+);
+
+INSERT INTO actor (
+    name
+) VALUES (
+    "Tom Hardy"
+);
+
+INSERT INTO actor (
+    name
+) VALUES (
+    "Joseph Gordn-Levitt"
+);
+
+INSERT INTO actor (
+    name
+) VALUES (
+    "Anne Hathaway"
+);
+
+INSERT INTO character (
+    name,
+    actor_id,
+    movie_id
+) VALUES (
+    "Bruce Wayne",
+    "1",
+    "1"
+);
+
+INSERT INTO character (
+    name,
+    actor_id,
+    movie_id
+) VALUES (
+    "Alfred",
+    "2",
+    "1"
+);
+
+INSERT INTO character (
+    name,
+    actor_id,
+    movie_id
+) VALUES (
+    "Ra's Al Ghul",
+    "3",
+    "1"
+);
+
+INSERT INTO character (
+    name,
+    actor_id,
+    movie_id
+) VALUES (
+    "Rachel Dawes",
+    "4",
+    "1"
+);
+
+INSERT INTO character (
+    name,
+    actor_id,
+    movie_id
+) VALUES (
+    "Comissioner Gordon",
+    "5",
+    "1"
+);
+
+INSERT INTO character (
+    name,
+    actor_id,
+    movie_id
+) VALUES (
+    "Bruce Wayne",
+    "1",
+    "2"
+);
+
+INSERT INTO character (
+    name,
+    actor_id,
+    movie_id
+) VALUES (
+    "Joker",
+    "6",
+    "2"
+);
+
+INSERT INTO character (
+    name,
+    actor_id,
+    movie_id
+) VALUES (
+    "Harvey Dent",
+    "7",
+    "2"
+);
+
+INSERT INTO character (
+    name,
+    actor_id,
+    movie_id
+) VALUES (
+    "Alfred",
+    "2",
+    "2"
+);
+
+INSERT INTO character (
+    name,
+    actor_id,
+    movie_id
+) VALUES (
+    "Rachel Dawes",
+    "8",
+    "2"
+);
+
+INSERT INTO character (
+    name,
+    actor_id,
+    movie_id
+) VALUES (
+    "Bruce Wayne",
+    "1",
+    "3"
+);
+
+INSERT INTO character (
+    name,
+    actor_id,
+    movie_id
+) VALUES (
+    "Comissioner Gordon",
+    "5",
+    "3"
+);
+
+INSERT INTO character (
+    name,
+    actor_id,
+    movie_id
+) VALUES (
+    "Bane",
+    "9",
+    "3"
+);
+
+INSERT INTO character (
+    name,
+    actor_id,
+    movie_id
+) VALUES (
+    "John Blake",
+    "10",
+    "3"
+);
+
+INSERT INTO character (
+    name,
+    actor_id,
+    movie_id
+) VALUES (
+    "Selina Kyle",
+    "11",
+    "3"
+);
 
 -- Prints a header for the movies output
 .print "Movies"
@@ -120,6 +407,7 @@
 
 -- The SQL statement for the movies output
 -- TODO!
+
 
 -- Prints a header for the cast output
 .print ""
