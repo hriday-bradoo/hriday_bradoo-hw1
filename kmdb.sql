@@ -408,6 +408,7 @@ INSERT INTO character (
 -- The SQL statement for the movies output
 -- TODO!
 
+SELECT movie.title, movie.year, movie.mpaa_rating, studio.name FROM movie INNER JOIN studio ON movie.studio_id = studio.id;
 
 -- Prints a header for the cast output
 .print ""
@@ -418,3 +419,5 @@ INSERT INTO character (
 
 -- The SQL statement for the cast output
 -- TODO!
+
+SELECT movie.title, actor.name, character.name FROM movie INNER JOIN character ON movie.id = character.movie_id INNER JOIN actor ON character.actor_id = actor.id;
